@@ -1,0 +1,12 @@
+Angular E-Commerce Site development setup in VS Code
+------------------------------------------------------
+
+In this project we are using VS Code as our editor for development , so we are using terminal in the VS code for create solution , projects etc. So we must know the dotnet commands for command line tool.
+
+* dotnet new -l : lists different types of project templates .
+* dotnet new classlib -o Core : Creates class library project in the folder Core inside the solution folder.
+* donnet sln -add Core : Adds project Core to the current solution.
+* dotnet add reference ../Core : Adds a reference of Core project to the current project , you should be in the current project in the command prompt.
+* dotnet restore : run this command after adding project reference at the solution level.
+* dotnet run : to run a project (must be inside the project folder)
+* dotnet watch run : to run a project in watch mode (any file changes will be automatically detected and re-build and run).
