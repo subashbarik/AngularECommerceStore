@@ -34,6 +34,7 @@ namespace API
             services.AddControllers();
             // DI services for the app
             services.AddScoped<IProductRepository,ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddDbContext<StoreContext>(option => 
                                     option.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
