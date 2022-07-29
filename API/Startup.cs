@@ -59,6 +59,9 @@ namespace API
 
             app.UseRouting();
 
+            // for serving static files such as images
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
