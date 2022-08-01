@@ -30,6 +30,14 @@ namespace API
             services.AddApplicationServices();
             //Calls the custom extension class for Swagger service configuration
             services.AddSwaggerServices();
+            // CORS setting to allow Angular calls from client side
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +59,8 @@ namespace API
 
             // for serving static files such as images
             app.UseStaticFiles();
+            // apply CORS policy
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
