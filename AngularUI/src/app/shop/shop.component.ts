@@ -15,16 +15,7 @@ export class ShopComponent implements OnInit {
   productTypes: IProductType[];
   productBrands: IProductBrand[];
   shopParams = new ShopParams();
-
-  //paging
-  productCount = 0;
-  pageIndex = 1; // Current page index default to first page
-  pageSize = 0; // No of products per page
-  pageCount = 0; // No of pages productCount/pageSize
-  pageCounts: number[];
-  bDisablePrev = false; //Whether to enable/disable the previous page button
-  bDisableNext = false; //Whether to enable/disable the next page button
-  bShowPaging = true; // Whether to show the paging control or not
+  totalCount = 0;
 
   sortOptions = [
     { name: 'Alphabetical', value: 'name' },
@@ -43,14 +34,7 @@ export class ShopComponent implements OnInit {
     this.shopSerive.getProducts(this.shopParams).subscribe(
       (response) => {
         this.products = response.data;
-        this.productCount = response.count;
-        this.shopParams.pageNumber = response.pageIndex;
-        this.shopParams.pageSize = response.pageSize;
-        this.pageCount = Math.ceil(
-          this.productCount / this.shopParams.pageSize
-        );
-        this.setPageCountArray();
-        this.setEnableDisablePrimaryPageButtons();
+        this.totalCount = response.count;
       },
       (error) => {
         console.log(error);
@@ -77,14 +61,6 @@ export class ShopComponent implements OnInit {
       }
     );
   }
-  setPageCountArray() {
-    this.pageCounts = new Array();
-    this.pageCounts.length = this.pageCount;
-    this.bShowPaging = this.pageCount > 1 ? true : false;
-    for (let i = 0; i < this.pageCount; i++) {
-      this.pageCounts[i] = i + 1;
-    }
-  }
   onBrandIdSelected(brandId: number) {
     this.shopParams.pageNumber = 1;
     this.shopParams.brandId = brandId;
@@ -95,38 +71,13 @@ export class ShopComponent implements OnInit {
     this.shopParams.typeId = typeId;
     this.getProducts();
   }
-  onSortSelected(sort: string) {
+  onSortSelected(event: any) {
     this.shopParams.pageNumber = 1;
-    this.shopParams.sort = sort;
+    this.shopParams.sort = event.target.value;
     this.getProducts();
   }
-  onPageClicked(page: number) {
+  onPageChanged(page: number) {
     this.shopParams.pageNumber = page;
     this.getProducts();
-  }
-  onPagePrimaryButtonClicked(type: string) {
-    if (type == 'I') {
-      if (this.shopParams.pageNumber < this.pageCount) {
-        this.shopParams.pageNumber++;
-      }
-    }
-    if (type == 'D') {
-      if (this.shopParams.pageNumber >= 2) {
-        this.shopParams.pageNumber--;
-      }
-    }
-    this.getProducts();
-  }
-  setEnableDisablePrimaryPageButtons() {
-    if (this.shopParams.pageNumber == 1) {
-      this.bDisablePrev = true;
-    } else {
-      this.bDisablePrev = false;
-    }
-    if (this.shopParams.pageNumber == this.pageCount) {
-      this.bDisableNext = true;
-    } else {
-      this.bDisableNext = false;
-    }
   }
 }

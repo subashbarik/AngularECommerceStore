@@ -1,0 +1,50 @@
+<div class="pagination" *ngIf="this.bShowPaging">
+  <button
+    class="page-btn-primary"
+    (click)="onPagePrimaryButtonClicked('D')"
+    [class.inactive]="bDisablePrev === true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="page-btn-icon"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 19l-7-7 7-7"
+      />
+    </svg>
+  </button>
+  <button
+    class="page-btn"
+    *ngFor="let page of pageCounts"
+    (click)="onPageClicked(page)"
+    [class.page-btn-current]="pageNumber === page"
+  >
+    {{ page }}
+  </button>
+  <button
+    class="page-btn-primary"
+    (click)="onPagePrimaryButtonClicked('I')"
+    [class.inactive]="bDisableNext === true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="page-btn-icon"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 5l7 7-7 7"
+      />
+    </svg>
+  </button>
+</div>
