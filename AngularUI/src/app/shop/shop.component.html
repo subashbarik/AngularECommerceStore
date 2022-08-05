@@ -44,18 +44,23 @@
   <div class="main-product">
     <div>
       <form class="search-form" name="sign-up" action="#">
-        <app-paging-header
-          [totalCount]="totalCount"
-          [pageNumber]="shopParams.pageNumber"
-          [pageSize]="shopParams.pageSize"
-        ></app-paging-header>
+        <div class="search-form-label">
+          <app-paging-header
+            [totalCount]="totalCount"
+            [pageNumber]="shopParams.pageNumber"
+            [pageSize]="shopParams.pageSize"
+          ></app-paging-header>
+        </div>
         <input
           id="search"
           type="text"
           placeholder="Search product"
           name="search"
+          #search
+          (keyup.enter)="onSearch()"
         />
-        <button class="c-btn">Search</button>
+        <button type="button" class="c-btn" (click)="onSearch()">Search</button>
+        <button type="button" class="c-btn" (click)="onReset()">Reset</button>
       </form>
     </div>
     <div class="products">

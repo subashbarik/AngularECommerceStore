@@ -365,19 +365,19 @@ strong {
 .search-form {
   display: flex;
   gap: 1.2rem;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2.4rem;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
-.search-form label {
+.search-form-label {
   font-size: 1.6rem;
   font-weight: 500;
   align-self: center;
 }
 
 .search-form input {
-  width: 60%;
+  width: 40%;
   padding: 0.8rem;
   font-size: 1.8rem;
   font-family: inherit;
