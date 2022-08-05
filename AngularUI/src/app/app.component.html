@@ -1,11 +1,6 @@
-<app-nav-bar></app-nav-bar>
-<div class="container" style="margin-top: 8rem">
-  <h1>Welcome to {{ title }}</h1>
-  <div>
-    <ul class="product-list">
-      <li *ngFor="let product of products" class="product-list-item">
-        {{ product.name }}
-      </li>
-    </ul>
-  </div>
-</div>
+<header>
+  <app-nav-bar></app-nav-bar>
+</header>
+<main>
+  <app-shop></app-shop>
+</main>

@@ -1,1 +1,132 @@
-<p>shop works!</p>
+<div class="container grid main-grid">
+  <div>
+    <div class="main-filter">
+      <label class="filter-label first block" for="select-where">Sort</label>
+      <select
+        id="select-where"
+        name="select-where"
+        (change)="onSortSelected($event.target.value)"
+      >
+        <option *ngFor="let sort of sortOptions" [value]="sort.value">
+          {{ sort.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="main-filter">
+      <label class="filter-label block">Brands</label>
+      <ul class="filter-label-item">
+        <li
+          *ngFor="let brand of productBrands"
+          [class.filter-active]="brand.id === shopParams.brandId"
+          [value]="brand.id"
+          (click)="onBrandIdSelected(brand.id)"
+        >
+          {{ brand.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="main-filter">
+      <label class="filter-label block">Type</label>
+      <ul class="filter-label-item">
+        <li
+          *ngFor="let pType of productTypes"
+          [class.filter-active]="pType.id === shopParams.typeId"
+          [value]="pType.id"
+          (click)="onTypeIdSelected(pType.id)"
+        >
+          {{ pType.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-product">
+    <div>
+      <form class="search-form" name="sign-up" action="#">
+        <label *ngIf="this.productCount && this.productCount > 0"
+          >Showing
+          <b>
+            {{
+              (this.shopParams.pageNumber - 1) * this.shopParams.pageSize + 1
+            }}
+            -
+            {{
+              this.shopParams.pageNumber * this.shopParams.pageSize >
+              this.productCount
+                ? this.productCount
+                : this.shopParams.pageNumber * this.shopParams.pageSize
+            }}
+          </b>
+          of <b>{{ this.productCount }}</b> results</label
+        >
+        <label *ngIf="this.productCount === 0"
+          >There are <b>0</b> results for this filter.</label
+        >
+        <input
+          id="search"
+          type="text"
+          placeholder="Search product"
+          name="search"
+        />
+        <button class="c-btn">Search</button>
+      </form>
+    </div>
+    <div class="products">
+      <div class="c-card" *ngFor="let item of products">
+        <app-product-item [product]="item"></app-product-item>
+      </div>
+    </div>
+
+    <div class="pagination" *ngIf="this.bShowPaging">
+      <button
+        class="page-btn-primary"
+        (click)="onPagePrimaryButtonClicked('D')"
+        [class.inactive]="bDisablePrev === true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="page-btn-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+      <button
+        class="page-btn"
+        *ngFor="let page of pageCounts"
+        (click)="onPageClicked(page)"
+        [class.page-btn-current]="shopParams.pageNumber === page"
+      >
+        {{ page }}
+      </button>
+      <button
+        class="page-btn-primary"
+        (click)="onPagePrimaryButtonClicked('I')"
+        [class.inactive]="bDisableNext === true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="page-btn-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

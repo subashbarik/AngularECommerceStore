@@ -94,14 +94,14 @@ body {
 /* General reusable components  */
 /* **************************************** */
 .container {
-  max-width: 120rem;
+  max-width: 130rem;
   padding: 0 3.2rem;
   margin: 0 auto;
 }
 .grid {
   display: grid;
   row-gap: 9.6rem;
-  column-gap: 6.4rem;
+  column-gap: 3.2rem;
 }
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
@@ -154,98 +154,39 @@ body {
   line-height: 1.2;
   margin-bottom: 3.2rem;
 }
-.btn,
-.btn:link,
-.btn:visited {
+.c-btn:link,
+.c-btn:visited {
   display: inline-block;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
   padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-
-  /* Only necessary for .btn */
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-
+  border-radius: 5px;
   /* color transition between current color and the hover  color 
          Transition is always put in the original 
       */
   transition: all 0.3s;
 }
-.btn--full:link,
-.btn--full:visited {
-  color: #fff;
-  background-color: #e67e22;
-}
-.btn--full:hover,
-.btn--full:active {
-  background-color: #cf711f;
-}
 
-.btn--outline:link,
-.btn--outline:visited {
+.c-btn--outline:link,
+.c-btn--outline:visited {
   color: #555;
   background-color: #fff;
 }
 
-.btn--outline:hover,
-.btn--outline:active {
+.c-btn--outline:hover,
+.c-btn--outline:active {
   background-color: #fdf2e9;
   /* border: 3px solid #fff;  This wont work whole content jumps*/
   /* Trick to have border inside the button*/
   box-shadow: inset 0 0 0 3px #fff;
 }
-.link:link,
-:visited {
-  display: inline-block;
-  color: #e67e22;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-  transition: all 0.3s;
-}
-.link:hover,
-.link:active {
-  color: #cf711f;
-  border-bottom: 1px solid transparent;
-}
-.btn--form {
-  background-color: #45260a;
-  color: #fdf2e9;
-  align-self: end;
-  padding: 1.2rem;
-}
-
-.btn--form:hover {
-  background-color: #fff;
-  color: #555;
-}
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-.list-item {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  line-height: 1.2;
-}
-.list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
-}
-*:focus {
-  outline: none;
-  /* outline: 4px dotted #e67e22; */
-  /* outline-offset: 8px; */
-  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
-}
+// *:focus {
+//   outline: none;
+//   /* outline: 4px dotted #e67e22; */
+//   /* outline-offset: 8px; */
+//   box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+// }
 /* HELPER classes */
 
 .margin-right-sm {
@@ -257,6 +198,9 @@ body {
 .center-text {
   text-align: center;
 }
+.block {
+  display: block;
+}
 strong {
   font-weight: 500;
 }
@@ -267,7 +211,7 @@ strong {
 /* **************************************** */
 /* Header section  */
 /* **************************************** */
-.header {
+.header-cotainer {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -316,8 +260,9 @@ strong {
   display: inline-block;
   color: #333;
   text-decoration: none;
+  text-transform: uppercase;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 2rem;
   transition: all 0.3s;
 }
 .main-nav-link:hover,
@@ -333,10 +278,11 @@ strong {
   font-size: 1.8rem;
   text-decoration: none;
   font-weight: 500;
-  padding: 1.2rem 2.4rem;
-  border-radius: 9px;
-  color: #fff;
-  background-color: #e67e22;
+  padding: 0.8rem 2.6rem;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #adc8d4;
   transition: all 0.3s;
 }
 .nav-right.nav-cta:hover,
@@ -344,7 +290,7 @@ strong {
   background-color: #cf711f;
 }
 /* Menu design for mobile screen */
-.btn-mobile-nav {
+.c-btn-mobile-nav {
   border: none;
   background: none;
   cursor: pointer;
@@ -359,7 +305,7 @@ strong {
   display: none;
 }
 /* Sticky navigation */
-.sticky .header {
+.sticky .header-cotainer {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -373,6 +319,109 @@ strong {
 }
 
 // **** Body Section ****//
+.main-grid {
+  padding-top: 2.4rem;
+  grid-template-columns: 1fr 4fr;
+  // background-color: #cf711f;
+}
+// Left side filter area styles
+.main-filter {
+  display: flex;
+  flex-direction: column;
+  background-color: #edf2ff;
+}
+.filter-label {
+  margin: 1.8rem 0;
+  font-size: 1.8rem;
+  color: #cf711f;
+}
+.filter-label.first {
+  margin-top: 0.4rem;
+}
+
+.filter-label-item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #333;
+  font-size: 1.6rem;
+}
+.filter-active {
+  background-color: #adc8d4;
+}
+.main-filter select {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+// Right side area containing search and product list
+.main-product {
+  display: grid;
+  // flex-direction: column;
+  // background-color: #cf711f;
+}
+// Search form style
+.search-form {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  margin-bottom: 2.4rem;
+  justify-content: flex-start;
+}
+
+.search-form label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  align-self: center;
+}
+
+.search-form input {
+  width: 60%;
+  padding: 0.8rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: #333;
+  border: none;
+  background-color: #edf2ff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-form input::placeholder {
+  color: #aaa;
+}
+//smilar style as nav-cta
+.c-btn {
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 2.6rem;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #adc8d4;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-family: inherit;
+}
+.c-btn:hover {
+  background-color: #cf711f;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+.product {
+  display: inline-block;
+}
+
 .product-list {
   display: flex;
   flex-direction: column;
@@ -381,4 +430,155 @@ strong {
   list-style: none;
   margin-top: 0.6rem;
   font-size: 1.2rem;
+}
+
+// Product Card style
+.c-card {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.c-card:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+.c-card-content {
+  padding: 0 3.2rem 3.2rem 3.2rem;
+}
+.c-card-content-data {
+  height: 7.2rem;
+  margin-bottom: 2.4rem;
+}
+.c-card-img {
+  width: 100%;
+  background-color: #adc8d4;
+  // background-color: #edf2ff;
+}
+.c-card-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.c-card-link:link,
+.c-card-link:visited {
+  text-decoration: none;
+}
+.c-card-link:hover,
+.c-card-link:active {
+  text-decoration: none;
+}
+.c-card-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.c-card-attribute {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+.c-card-text {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+}
+.c-card-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #e67e22;
+}
+.c-card-footer {
+  margin-top: 1.8rem;
+}
+
+.lnk-btn-small:link,
+.lnk-btn-small:visited {
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #adc8d4;
+  transition: all 0.3s;
+  margin-right: 1rem;
+}
+.lnk-btn-small:hover,
+.lnk-btn-small:active {
+  background-color: #cf711f;
+}
+.lnk-btn-small.lnk-cart {
+  padding: 0.5rem 4.8rem;
+}
+.lnk-btn-small.lnk-view {
+  padding: 0.5rem 3.2rem;
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+.pagination.hide {
+  display: none;
+}
+.page-btn-primary {
+  border: 1px solid #0000ff;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+.page-btn-primary:hover {
+  background-color: #0000ff;
+}
+
+.page-btn-primary:hover .page-btn-icon {
+  stroke: #fff;
+}
+.page-btn-primary.inactive {
+  border: 1px solid #cccccc;
+  background-color: #cccccc;
+  cursor: default;
+}
+.page-btn-primary.inactive .page-btn-icon {
+  stroke: #fff;
+}
+.page-btn-icon {
+  height: 20px;
+  width: 20px;
+  stroke: #0000ff;
+}
+
+.page-btn {
+  font-size: 18px;
+  color: #343a40;
+  text-decoration: none;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.page-btn:hover,
+.page-btn:active,
+.page-btn.page-btn-current {
+  background-color: #0000ff;
+  color: #fff;
+}
+
+.page-dots {
+  color: #868e96;
 }
