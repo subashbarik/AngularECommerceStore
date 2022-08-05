@@ -82,12 +82,14 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
   onSearch() {
+    this.shopParams.pageNumber = 1;
     this.shopParams.search = this.searchOption.nativeElement.value;
     this.getProducts();
   }
   onReset() {
     this.searchOption.nativeElement.value = '';
     this.shopParams = new ShopParams();
+    this.shopParams.pageNumber = 1;
     this.getProducts();
   }
 }

@@ -31,6 +31,7 @@ export class PagerComponent implements OnInit, OnChanges {
     // because ngOnChange will be called whenever there
     // is a change in parent, which is what happens when
     // we fetch products
+    this.pageNumber = 1; //Start with the first page
     this.setPageCountArray();
     this.setEnableDisablePrimaryPageButtons();
   }
