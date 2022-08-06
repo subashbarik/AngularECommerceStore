@@ -270,6 +270,7 @@ strong {
   margin: 1.8rem 0;
   font-size: 1.8rem;
   color: #cf711f;
+  font-weight: 600;
 }
 .filter-label.first {
   margin-top: 0.4rem;
@@ -279,12 +280,17 @@ strong {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.4rem;
   color: #333;
   font-size: 1.6rem;
 }
+.filter-label-item li {
+  height: 2.4rem;
+  padding-top: 0.4rem;
+}
 .filter-active {
   background-color: #adc8d4;
+  border-radius: 5px 5px 0 0;
 }
 .main-filter select {
   font-size: 1.6rem;
@@ -294,22 +300,24 @@ strong {
 // Right side area containing search and product list
 .main-product {
   display: grid;
-  // flex-direction: column;
-  // background-color: #cf711f;
 }
 // Search form style
 .search-form {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
   margin-bottom: 2.4rem;
-  justify-content: flex-end;
 }
 
 .search-form-label {
   font-size: 1.6rem;
   font-weight: 500;
   align-self: center;
+  justify-self: flex-start;
+}
+.search-form-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .search-form input {
@@ -319,7 +327,7 @@ strong {
   font-family: inherit;
   color: #333;
   border: none;
-  background-color: #edf2ff;
+  // background-color: #edf2ff;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -352,8 +360,9 @@ strong {
 }
 .products {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.6rem;
+  // background-color: #adc8d4;
 }
 
 // Product Card style

@@ -42,7 +42,7 @@
   </div>
 
   <div class="main-product">
-    <div>
+    <div class="search">
       <form class="search-form" name="sign-up" action="#">
         <div class="search-form-label">
           <app-paging-header
@@ -51,16 +51,20 @@
             [pageSize]="shopParams.pageSize"
           ></app-paging-header>
         </div>
-        <input
-          id="search"
-          type="text"
-          placeholder="Search product"
-          name="search"
-          #search
-          (keyup.enter)="onSearch()"
-        />
-        <button type="button" class="c-btn" (click)="onSearch()">Search</button>
-        <button type="button" class="c-btn" (click)="onReset()">Reset</button>
+        <div class="search-form-controls">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search product"
+            name="search"
+            #search
+            (keyup.enter)="onSearch()"
+          />
+          <button type="button" class="c-btn" (click)="onSearch()">
+            Search
+          </button>
+          <button type="button" class="c-btn" (click)="onReset()">Reset</button>
+        </div>
       </form>
     </div>
     <div class="products">
