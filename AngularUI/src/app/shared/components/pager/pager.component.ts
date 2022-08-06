@@ -43,15 +43,21 @@ export class PagerComponent implements OnInit, OnChanges {
     this.pageChanged.emit(page);
     this.setEnableDisablePrimaryPageButtons();
   }
+  // Sets the no of page counter in an array , used to for loop
+  // in the HTML template
   setPageCountArray() {
     this.pageCounts = new Array();
     this.pageCount = Math.ceil(this.totalCount / this.pageSize);
 
     this.pageCounts.length = this.pageCount;
-    this.bShowPaging = this.pageCount > 1 ? true : false;
+    this.showHidePage();
     for (let i = 0; i < this.pageCount; i++) {
       this.pageCounts[i] = i + 1;
     }
+  }
+  // Logic to show or hide the Paging control
+  showHidePage() {
+    this.bShowPaging = this.pageCount > 1 ? true : false;
   }
   onPagePrimaryButtonClicked(type: string) {
     if (type == 'I') {

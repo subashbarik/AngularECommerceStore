@@ -1,0 +1,20 @@
+<div class="container grid grid-2-cols padding-top-md" *ngIf="product">
+  <div>
+    <img class="pd-img" src="{{ product.pictureUrl }}" />
+  </div>
+  <div class="margin-top-lg">
+    <h1 class="margin-bottom-md">{{ product.name }}</h1>
+    <div class="pd-attributes">
+      <div class="pd-text bold">Price : {{ product.price | currency }}</div>
+      <div class="pd-text">Brand : {{ product.productBrand }}</div>
+      <div class="pd-text">Type : {{ product.productType }}</div>
+    </div>
+    <div class="pd-item-amount margin-top-md">
+      <i class="fa fa-minus-circle font-size-md pd-plus-minus"></i>
+      <span class="pd-item-qty font-size-sm">2</span>
+      <i class="fa fa-plus-circle font-size-md pd-plus-minus"></i>
+      <button class="c-btn">Add to Cart</button>
+    </div>
+    <div class="pd-text margin-top-md">{{ product.description }}</div>
+  </div>
+</div>

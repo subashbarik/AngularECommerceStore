@@ -106,16 +106,16 @@ body {
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
-.grid--2-cols {
+.grid-2-cols {
   grid-template-columns: repeat(2, 1fr);
 }
-.grid--3-cols {
+.grid-3-cols {
   grid-template-columns: repeat(3, 1fr);
 }
-.grid--4-cols {
+.grid-4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
-.grid--5-cols {
+.grid-5-cols {
   grid-template-columns: repeat(5, 1fr);
 }
 .grid--center-v {
@@ -188,7 +188,15 @@ body {
 //   box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 // }
 /* HELPER classes */
-
+.padding-top-md {
+  padding-top: 2.4rem !important;
+}
+.margin-top-md {
+  margin-top: 2.4rem !important;
+}
+.margin-top-lg {
+  margin-top: 7.2rem !important;
+}
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
@@ -204,91 +212,20 @@ body {
 strong {
   font-weight: 500;
 }
+.bold {
+  font-weight: 700;
+}
+.font-size-sm {
+  font-size: 1.8rem;
+}
+.font-size-md {
+  font-size: 2.4rem;
+}
 
 // ******************************************************************************
 //  Specific component style section
 // ******************************************************************************
-/* **************************************** */
-/* Header section  */
-/* **************************************** */
-.header-cotainer {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #e7f5ff;
-  background-color: #edf2ff;
-  /*  Because we want the header to be sticky later*/
-  height: 6.2rem;
-  padding: 0 4.8rem;
-}
-.logo {
-  max-height: 7rem;
-}
-.cart {
-  position: relative;
-}
-.cart-icon {
-  max-height: 2.4rem;
-  margin-right: 1.2rem;
-}
-.cart-no {
-  position: absolute;
-  min-height: 2.4rem;
-  min-width: 2.4rem;
-  border-radius: 50%;
-  font-size: 1em;
-  font-weight: 800;
-  background-color: blue;
-  color: white;
-  text-align: center;
-  padding-top: 0.7rem;
-  top: -5px;
-  right: 0px;
-}
-/* **************************************** */
-/* Navigation section  */
-/* **************************************** */
-.main-nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 4.8rem;
-}
-.main-nav-link:link,
-.main-nav-link:visited {
-  display: inline-block;
-  color: #333;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 2rem;
-  transition: all 0.3s;
-}
-.main-nav-link:hover,
-.main-nav-link:active {
-  color: #cf711f;
-}
-.nav-right {
-  display: flex;
-  gap: 1.2rem;
-}
-.nav-right.nav-cta:link,
-.nav-right.nav-cta:visited {
-  font-size: 1.8rem;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.8rem 2.6rem;
-  border-radius: 5px;
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #adc8d4;
-  transition: all 0.3s;
-}
-.nav-right.nav-cta:hover,
-.nav-right.nav-cta:active {
-  background-color: #cf711f;
-}
+
 /* Menu design for mobile screen */
 .c-btn-mobile-nav {
   border: none;
@@ -320,7 +257,6 @@ strong {
 
 // **** Body Section ****//
 .main-grid {
-  padding-top: 2.4rem;
   grid-template-columns: 1fr 4fr;
   // background-color: #cf711f;
 }
@@ -407,6 +343,7 @@ strong {
 }
 .c-btn:hover {
   background-color: #cf711f;
+  color: #fff;
 }
 
 .cta *:focus {
@@ -417,19 +354,6 @@ strong {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
-}
-.product {
-  display: inline-block;
-}
-
-.product-list {
-  display: flex;
-  flex-direction: column;
-}
-.product-list-item {
-  list-style: none;
-  margin-top: 0.6rem;
-  font-size: 1.2rem;
 }
 
 // Product Card style
@@ -442,55 +366,6 @@ strong {
 .c-card:hover {
   transform: translateY(-1.2rem);
   box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
-}
-.c-card-content {
-  padding: 0 3.2rem 3.2rem 3.2rem;
-}
-.c-card-content-data {
-  height: 7.2rem;
-  margin-bottom: 2.4rem;
-}
-.c-card-img {
-  width: 100%;
-  background-color: #adc8d4;
-  // background-color: #edf2ff;
-}
-.c-card-title {
-  font-size: 2rem;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-}
-.c-card-link:link,
-.c-card-link:visited {
-  text-decoration: none;
-}
-.c-card-link:hover,
-.c-card-link:active {
-  text-decoration: none;
-}
-.c-card-attributes {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.c-card-attribute {
-  font-size: 1.5rem;
-  display: flex;
-  gap: 1.2rem;
-}
-.c-card-text {
-  font-size: 1.2rem;
-  margin-top: 1.2rem;
-}
-.c-card-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  color: #e67e22;
-}
-.c-card-footer {
-  margin-top: 1.8rem;
 }
 
 .lnk-btn-small:link,
@@ -509,76 +384,5 @@ strong {
 .lnk-btn-small:hover,
 .lnk-btn-small:active {
   background-color: #cf711f;
-}
-.lnk-btn-small.lnk-cart {
-  padding: 0.5rem 4.8rem;
-}
-.lnk-btn-small.lnk-view {
-  padding: 0.5rem 3.2rem;
-}
-
-// Pagination
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 1.2rem;
-}
-.pagination.hide {
-  display: none;
-}
-.page-btn-primary {
-  border: 1px solid #0000ff;
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  background: none;
-  cursor: pointer;
-}
-
-.page-btn-primary:hover {
-  background-color: #0000ff;
-}
-
-.page-btn-primary:hover .page-btn-icon {
-  stroke: #fff;
-}
-.page-btn-primary.inactive {
-  border: 1px solid #cccccc;
-  background-color: #cccccc;
-  cursor: default;
-}
-.page-btn-primary.inactive .page-btn-icon {
-  stroke: #fff;
-}
-.page-btn-icon {
-  height: 20px;
-  width: 20px;
-  stroke: #0000ff;
-}
-
-.page-btn {
-  font-size: 18px;
-  color: #343a40;
-  text-decoration: none;
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-}
-
-.page-btn:hover,
-.page-btn:active,
-.page-btn.page-btn-current {
-  background-color: #0000ff;
   color: #fff;
-}
-
-.page-dots {
-  color: #868e96;
 }

@@ -1,0 +1,28 @@
+h1 {
+  font-size: 2.4rem;
+}
+.pd-text {
+  font-size: 1.6rem;
+}
+
+.pd-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.pd-item-amount {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  //   margin-top: 3rem;
+}
+.pd-item-qty {
+  align-self: center;
+}
+.pd-plus-minus {
+  color: #cf711f;
+  cursor: pointer;
+}
+.pd-img {
+  max-width: 64rem;
+}

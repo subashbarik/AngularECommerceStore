@@ -1,16 +1,23 @@
 <div class="header-cotainer">
   <a href="#">
-    <img
-      src="/assets/images/logo.png"
-      class="logo"
-      style="max-height: 70px"
-      alt="logo"
-    />
+    <img src="/assets/images/logo.png" class="logo" alt="logo" routerLink="/" />
   </a>
   <nav class="main-nav">
     <ul class="main-nav-list">
-      <li><a class="main-nav-link" href="#">Home</a></li>
-      <li><a class="main-nav-link" href="#">Shop</a></li>
+      <li>
+        <a
+          class="main-nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a class="main-nav-link" routerLink="/shop" routerLinkActive="active"
+          >Shop</a
+        >
+      </li>
       <li><a class="main-nav-link" href="#">Contact</a></li>
     </ul>
   </nav>

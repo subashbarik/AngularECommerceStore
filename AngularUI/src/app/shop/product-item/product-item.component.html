@@ -6,7 +6,9 @@
   />
   <div class="c-card-content-data">
     <p class="c-card-title">
-      <a href="#" class="c-card-link">{{ product.name }}</a>
+      <a href="#" class="c-card-link" routerLink="/shop/{{ product.id }}">{{
+        product.name
+      }}</a>
     </p>
     <ul class="c-card-attributes">
       <li class="c-card-attribute">
@@ -16,6 +18,12 @@
   </div>
   <div class="c-card-footer">
     <a class="lnk-btn-small lnk-cart fa fa-shopping-cart" href="#"></a>
-    <a class="lnk-btn-small lnk-view" href="#">View</a>
+    <a
+      class="lnk-btn-small lnk-view"
+      href="#"
+      routerLink="/shop/{{ product.id }}"
+      routerLinkActive="router-link-active"
+      >View</a
+    >
   </div>
 </div>
