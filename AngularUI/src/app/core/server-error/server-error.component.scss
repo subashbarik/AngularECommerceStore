@@ -1,0 +1,24 @@
+.server-error {
+  border: 1px solid #adc8d4;
+  padding: 2.4px 0;
+}
+.server-error-header {
+  border-bottom: 1px solid #adc8d4;
+  padding: 0.5rem 0.5rem;
+  background-color: #edf2ff;
+}
+.error-message {
+  padding: 1.2rem 0.6rem;
+  max-height: 4.2rem;
+  font-weight: 600;
+}
+.error-details-header {
+  padding: 0 0.6rem;
+  font-weight: 500;
+  color: red;
+}
+.error-details {
+  padding: 1.2rem 1.6rem;
+  max-height: 40rem;
+  color: #57646a;
+}

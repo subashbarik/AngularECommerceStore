@@ -1,0 +1,19 @@
+<div class="container server-error margin-top-lg">
+  <div class="server-error-header">
+    <h1 class="tertiary">
+      Internal Server Error : - refreshing the page will make the exception
+      disapper
+    </h1>
+  </div>
+  <div class="error-message">
+    <p>Error: {{ error.message }}</p>
+  </div>
+  <div class="error-details-header">
+    <p>Error Details:</p>
+  </div>
+  <div class="error-details">
+    <code class="margin-top-md" style="background-color: whitesmoke">{{
+      error.details
+    }}</code>
+  </div>
+</div>
