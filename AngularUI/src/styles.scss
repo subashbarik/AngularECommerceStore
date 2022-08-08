@@ -395,3 +395,29 @@ strong {
   background-color: #cf711f;
   color: #fff;
 }
+
+//**********************************************************************
+// media queries
+//**********************************************************************
+/* Landscape Tablets */
+/* 1200px max width 1200/16 = 75em */
+@media (max-width: 75em) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablets */
+/* 944px max width 944/16 = 59em */
+@media (max-width: 56em) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Tablets */
+/* 700px max width 700/16 = 44em */
+@media (max-width: 44em) {
+}
