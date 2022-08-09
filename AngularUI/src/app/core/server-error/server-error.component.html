@@ -1,19 +1,11 @@
 <div class="container server-error margin-top-lg">
-  <div class="server-error-header">
-    <h1 class="tertiary">
-      Internal Server Error : - refreshing the page will make the exception
-      disapper
-    </h1>
-  </div>
-  <div class="error-message">
-    <p>Error: {{ error.message }}</p>
-  </div>
-  <div class="error-details-header">
-    <p>Error Details:</p>
-  </div>
-  <div class="error-details">
-    <code class="margin-top-md" style="background-color: whitesmoke">{{
-      error.details
-    }}</code>
-  </div>
+  <h1 class="server-error-header tertiary">
+    Internal Server Error : - refreshing the page will make the exception
+    disapper
+  </h1>
+  <ng-container *ngIf="error">
+    <p class="error-message">Error: {{ error.message }}</p>
+    <p class="error-details-header">Error Details:</p>
+    <code class="error-details">{{ error.details }}</code>
+  </ng-container>
 </div>
