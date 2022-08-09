@@ -1,0 +1,11 @@
+<div class="ac-container ac-server-error ac-margin-top-lg">
+  <h1 class="ac-server-error-header tertiary">
+    Internal Server Error : - refreshing the page will make the exception
+    disapper
+  </h1>
+  <ng-container *ngIf="error">
+    <p class="ac-error-message">Error: {{ error.message }}</p>
+    <p class="ac-error-details-header">Error Details:</p>
+    <code class="ac-error-details">{{ error.details }}</code>
+  </ng-container>
+</div>

@@ -1,0 +1,81 @@
+.ca-header-cotainer {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e7f5ff;
+  background-color: #edf2ff;
+  /*  Because we want the header to be sticky later*/
+  height: 6.2rem;
+  padding: 0 4.8rem;
+}
+.ca-logo {
+  max-height: 7rem;
+}
+.ca-cart {
+  position: relative;
+}
+.ca-cart-icon {
+  max-height: 2.4rem;
+  margin-right: 1.2rem;
+  color: #333;
+}
+.ca-cart-no {
+  position: absolute;
+  min-height: 2.4rem;
+  min-width: 2.4rem;
+  border-radius: 50%;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+  top: -8px;
+  right: 0px;
+}
+
+.ca-main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+.ca-main-nav-link:link,
+.ca-main-nav-link:visited {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+.ca-main-nav-link:hover {
+  color: #cf711f;
+}
+.ca-main-nav-link.active {
+  color: #cf711f;
+}
+.ca-nav-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.ca-nav-right.ca-nav-cta:link,
+.ca-nav-right.ca-nav-cta:visited {
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 2.6rem;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #adc8d4;
+  transition: all 0.3s;
+}
+.ca-nav-right.ca-nav-cta:hover,
+.ca-nav-right.ca-nav-cta:active {
+  background-color: #cf711f;
+  color: #fff;
+}

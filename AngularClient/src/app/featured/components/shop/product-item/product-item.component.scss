@@ -1,0 +1,63 @@
+// button style specific to the page
+.ac-lnk-btn-small.ac-lnk-cart {
+  padding: 0.5rem 3.2rem;
+}
+.ac-lnk-btn-small.ac-lnk-view {
+  padding: 0.5rem 2.4rem;
+}
+// Card style
+.ac-card-content {
+  padding-bottom: 1.2rem;
+  // background-color: #edf2ff;
+  // padding: 0 1.6rem 1.6rem 1.6rem;
+  // padding: 0rem 1.6rem 0 0;
+}
+.ac-card-content-data {
+  height: 7.2rem;
+  margin-bottom: 2.4rem;
+  margin-left: 0.6rem;
+}
+.ac-card-img {
+  width: 100%;
+  background-color: #adc8d4;
+  // background-color: #edf2ff;
+}
+.ac-card-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.ac-card-link:link,
+.ac-card-link:visited {
+  text-decoration: none;
+}
+.ac-card-link:hover,
+.ac-card-link:active {
+  text-decoration: none;
+}
+.ac-card-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ac-card-attribute {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+.ac-card-text {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+}
+.ac-card-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #e67e22;
+}
+.ac-card-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}

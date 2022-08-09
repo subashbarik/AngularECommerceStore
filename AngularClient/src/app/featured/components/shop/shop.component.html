@@ -1,0 +1,87 @@
+<div class="ac-container ac-grid ac-main-grid ac-padding-top-md">
+  <div>
+    <div class="ac-main-filter">
+      <label class="ac-filter-label ac-first ac-block" for="select-where"
+        >Sort</label
+      >
+      <select
+        id="select-where"
+        name="select-where"
+        (change)="onSortSelected($event)"
+      >
+        <option *ngFor="let sort of sortOptions" [value]="sort.value">
+          {{ sort.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="ac-main-filter">
+      <label class="ac-filter-label ac-block">Brands</label>
+      <ul class="ac-filter-label-item">
+        <li
+          *ngFor="let brand of productBrands"
+          [class.ac-filter-active]="brand.id === shopParams.brandId"
+          [value]="brand.id"
+          (click)="onBrandIdSelected(brand.id)"
+        >
+          {{ brand.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="ac-main-filter">
+      <label class="ac-filter-label block">Type</label>
+      <ul class="ac-filter-label-item">
+        <li
+          *ngFor="let pType of productTypes"
+          [class.ac-filter-active]="pType.id === shopParams.typeId"
+          [value]="pType.id"
+          (click)="onTypeIdSelected(pType.id)"
+        >
+          {{ pType.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ac-main-product">
+    <div class="ac-search">
+      <form class="ac-search-form" name="sign-up" action="#">
+        <div class="ac-search-form-label">
+          <app-paging-header
+            [totalCount]="totalCount"
+            [pageNumber]="shopParams.pageNumber"
+            [pageSize]="shopParams.pageSize"
+          ></app-paging-header>
+        </div>
+        <div class="ac-search-form-controls">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search product"
+            name="search"
+            #search
+            (keyup.enter)="onSearch()"
+          />
+          <button type="button" class="ac-btn" (click)="onSearch()">
+            Search
+          </button>
+          <button type="button" class="ac-btn" (click)="onReset()">
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="ac-products">
+      <div class="ac-card" *ngFor="let item of products">
+        <app-product-item [product]="item"></app-product-item>
+      </div>
+    </div>
+    <div>
+      <app-pager
+        [totalCount]="this.totalCount"
+        [pageSize]="shopParams.pageSize"
+        (pageChanged)="onPageChanged($event)"
+      ></app-pager>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.ac-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+.ac-pagination.hide {
+  display: none;
+}
+.ac-page-btn-primary {
+  border: 1px solid #0000ff;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+.ac-page-btn-primary:hover {
+  background-color: #0000ff;
+}
+
+.ac-page-btn-primary:hover .ac-page-btn-icon {
+  stroke: #fff;
+}
+.ac-page-btn-primary.inactive {
+  border: 1px solid #cccccc;
+  background-color: #cccccc;
+  cursor: default;
+}
+.ac-page-btn-primary.inactive .ac-page-btn-icon {
+  stroke: #fff;
+}
+.ac-page-btn-icon {
+  height: 20px;
+  width: 20px;
+  stroke: #0000ff;
+}
+
+.ac-page-btn {
+  font-size: 18px;
+  color: #343a40;
+  text-decoration: none;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.ac-page-btn:hover,
+.ac-page-btn:active,
+.ac-page-btn.ac-page-btn-current {
+  background-color: #0000ff;
+  color: #fff;
+}
+
+.ac-page-dots {
+  color: #868e96;
+}

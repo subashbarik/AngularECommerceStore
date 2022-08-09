@@ -1,0 +1,19 @@
+<div class="ac-container ac-margin-top-lg">
+  <button class="ac-btn ac-margin-right-sm" (click)="get500Error()">
+    Test 500 Error
+  </button>
+  <button class="ac-btn ac-margin-right-sm" (click)="get404Error()">
+    Test 404 Error
+  </button>
+  <button class="ac-btn ac-margin-right-sm" (click)="get400Error()">
+    Test 400 Error
+  </button>
+  <button class="ac-btn" (click)="get400ValidationError()">
+    Test 400 Validation Error
+  </button>
+  <div class="ac-margin-top-sm" *ngIf="validationError">
+    <ul>
+      <li *ngFor="let error of validationError">{{ error }}</li>
+    </ul>
+  </div>
+</div>

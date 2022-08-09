@@ -1,0 +1,23 @@
+<div
+  class="ac-container ac-grid ac-grid-2-cols ac-padding-top-md"
+  *ngIf="product"
+>
+  <div>
+    <img class="ac-pd-img" src="{{ product.pictureUrl }}" />
+  </div>
+  <div class="ac-margin-top-lg">
+    <h1 class="ac-margin-bottom-md">{{ product.name }}</h1>
+    <div class="ac-pd-attributes">
+      <div class="ac-pd-text bold">Price : {{ product.price | currency }}</div>
+      <div class="ac-pd-text">Brand : {{ product.productBrand }}</div>
+      <div class="ac-pd-text">Type : {{ product.productType }}</div>
+    </div>
+    <div class="ac-pd-item-amount ac-margin-top-md">
+      <i class="fa fa-minus-circle font-size-md ac-pd-plus-minus"></i>
+      <span class="ac-pd-item-qty ac-font-size-sm">2</span>
+      <i class="fa fa-plus-circle ac-font-size-md ac-pd-plus-minus"></i>
+      <button class="ac-btn">Add to Cart</button>
+    </div>
+    <div class="ac-pd-text ac-margin-top-md">{{ product.description }}</div>
+  </div>
+</div>

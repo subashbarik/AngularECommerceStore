@@ -1,0 +1,28 @@
+h1 {
+  font-size: 2.4rem;
+}
+.ac-pd-text {
+  font-size: 1.6rem;
+}
+
+.ac-pd-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.ac-pd-item-amount {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  //   margin-top: 3rem;
+}
+.ac-pd-item-qty {
+  align-self: center;
+}
+.ac-pd-plus-minus {
+  color: #cf711f;
+  cursor: pointer;
+}
+.ac-pd-img {
+  max-width: 64rem;
+}

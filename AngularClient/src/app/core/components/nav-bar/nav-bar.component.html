@@ -1,0 +1,44 @@
+<div class="ca-header-cotainer">
+  <a href="#">
+    <img
+      src="/assets/images/logo.png"
+      class="ca-logo"
+      alt="logo"
+      routerLink="/"
+    />
+  </a>
+  <nav class="ca-main-nav">
+    <ul class="ca-main-nav-list">
+      <li>
+        <a
+          class="ca-main-nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a class="ca-main-nav-link" routerLink="/shop" routerLinkActive="active"
+          >Shop</a
+        >
+      </li>
+      <li>
+        <a
+          class="ca-main-nav-link"
+          routerLink="/test-error"
+          routerLinkActive="active"
+          >Errors</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="ca-nav-right">
+    <a class="ca-cart">
+      <i class="fa fa-shopping-cart fa-2x ca-cart-icon"></i>
+      <div class="ca-cart-no">5</div>
+    </a>
+    <a class="ca-nav-right ca-nav-cta" href="#">Login</a>
+    <a class="ca-nav-right ca-nav-cta" href="#">Sign up</a>
+  </div>
+</div>

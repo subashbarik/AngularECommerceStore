@@ -1,0 +1,29 @@
+<div class="ac-card-content">
+  <img
+    src="{{ product.pictureUrl }}"
+    class="ac-card-img"
+    alt="{{ product.name }}"
+  />
+  <div class="ac-card-content-data">
+    <p class="ac-card-title">
+      <a href="#" class="ac-card-link" routerLink="/shop/{{ product.id }}">{{
+        product.name
+      }}</a>
+    </p>
+    <ul class="ac-card-attributes">
+      <li class="ac-card-attribute">
+        <span>{{ product.price | currency }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="ac-card-footer">
+    <a class="ac-lnk-btn-small ac-lnk-cart fa fa-shopping-cart" href="#"></a>
+    <a
+      class="ac-lnk-btn-small ac-lnk-view"
+      href="#"
+      routerLink="/shop/{{ product.id }}"
+      routerLinkActive="router-link-active"
+      >View</a
+    >
+  </div>
+</div>
