@@ -10,3 +10,48 @@ In this project we are using VS Code as our editor for development , so we are u
 * dotnet restore : run this command after adding project reference at the solution level.
 * dotnet run : to run a project (must be inside the project folder)
 * dotnet watch run : to run a project in watch mode (any file changes will be automatically detected and re-build and run).
+
+Nuget Packages for projects
+---------------------------
+* SqLite - Database support
+
+
+Git and GitHub Setup
+-----------------------
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/subashbarik/AngularECommerceStore.git
+git push -u origin master
+
+Design setup
+-------------
+* Repository Pattern - For separetaion of Data Access logic from business logic
+* Specification Pattern - To overcome problems of the Generic Repository Pattern
+DI
+---
+* For repository classed used "AddScoped" because in this case objects created leaves for the life time of the HTTP Call. 
+  "AddTransient" creates object for that method call only so it is very shot 
+   and "AddSingleTon" is for the whole application lifetime so it is very long.
+
+Angular Setup
+--------------
+* ng new AngularUI --strict false (New project with name AngularUI with strict mode off)
+* Use version 11/12/13 for this course as ngx-bootstrap does not yet support version 14
+
+UI Packages
+------------
+* Use ngx-bootstrap https://valor-software.com/ngx-bootstrap for styling.
+* ng add ngx-bootstrap (first choice as it auto updates files like app.module.ts) / npm install ngx-bootstrap --save  - to install ngx-bootstrap , styling package developed by Angular team (ttps://valor-software.com/ngx-bootstrap)
+* npm install bootstrap@5.2.0 - to install bootstrap version 5.2.0
+* npm install font-awesome - to install font-awesome for icons
+* toastr :  npm install ngx-toastr@14.3.0
+
+Angular Packages used for VS Code
+-----------------------------------
+* Angular Language Service
+* Angular Snippets
+
+
+
