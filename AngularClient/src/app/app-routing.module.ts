@@ -17,7 +17,7 @@ const routes: Routes = [
         (mod) => mod.ShopModule
       ),
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
 @NgModule({

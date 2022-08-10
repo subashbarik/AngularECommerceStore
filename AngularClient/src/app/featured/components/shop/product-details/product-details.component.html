@@ -8,7 +8,9 @@
   <div class="ac-margin-top-lg">
     <h1 class="ac-margin-bottom-md">{{ product.name }}</h1>
     <div class="ac-pd-attributes">
-      <div class="ac-pd-text bold">Price : {{ product.price | currency }}</div>
+      <div class="ac-pd-text ac-price">
+        Price : {{ product.price | currency }}
+      </div>
       <div class="ac-pd-text">Brand : {{ product.productBrand }}</div>
       <div class="ac-pd-text">Type : {{ product.productType }}</div>
     </div>

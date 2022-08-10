@@ -1,49 +1,51 @@
 <div class="ac-container ac-grid ac-main-grid ac-padding-top-md">
   <div>
-    <div class="ac-main-filter">
-      <label class="ac-filter-label ac-first ac-block" for="select-where"
-        >Sort</label
-      >
-      <select
-        id="select-where"
-        name="select-where"
-        (change)="onSortSelected($event)"
-      >
-        <option *ngFor="let sort of sortOptions" [value]="sort.value">
-          {{ sort.name }}
-        </option>
-      </select>
-    </div>
+    <ng-container *ngIf="productBrands && productTypes">
+      <div class="ac-main-filter">
+        <label class="ac-filter-label ac-first ac-block" for="select-where"
+          >Sort</label
+        >
+        <select
+          id="select-where"
+          name="select-where"
+          (change)="onSortSelected($event)"
+        >
+          <option *ngFor="let sort of sortOptions" [value]="sort.value">
+            {{ sort.name }}
+          </option>
+        </select>
+      </div>
 
-    <div class="ac-main-filter">
-      <label class="ac-filter-label ac-block">Brands</label>
-      <ul class="ac-filter-label-item">
-        <li
-          *ngFor="let brand of productBrands"
-          [class.ac-filter-active]="brand.id === shopParams.brandId"
-          [value]="brand.id"
-          (click)="onBrandIdSelected(brand.id)"
-        >
-          {{ brand.name }}
-        </li>
-      </ul>
-    </div>
-    <div class="ac-main-filter">
-      <label class="ac-filter-label block">Type</label>
-      <ul class="ac-filter-label-item">
-        <li
-          *ngFor="let pType of productTypes"
-          [class.ac-filter-active]="pType.id === shopParams.typeId"
-          [value]="pType.id"
-          (click)="onTypeIdSelected(pType.id)"
-        >
-          {{ pType.name }}
-        </li>
-      </ul>
-    </div>
+      <div class="ac-main-filter">
+        <label class="ac-filter-label ac-block">Brands</label>
+        <ul class="ac-filter-label-item">
+          <li
+            *ngFor="let brand of productBrands"
+            [class.ac-filter-active]="brand.id === shopParams.brandId"
+            [value]="brand.id"
+            (click)="onBrandIdSelected(brand.id)"
+          >
+            {{ brand.name }}
+          </li>
+        </ul>
+      </div>
+      <div class="ac-main-filter">
+        <label class="ac-filter-label block">Type</label>
+        <ul class="ac-filter-label-item">
+          <li
+            *ngFor="let pType of productTypes"
+            [class.ac-filter-active]="pType.id === shopParams.typeId"
+            [value]="pType.id"
+            (click)="onTypeIdSelected(pType.id)"
+          >
+            {{ pType.name }}
+          </li>
+        </ul>
+      </div>
+    </ng-container>
   </div>
 
-  <div class="ac-main-product">
+  <div class="ac-main-product" *ngIf="products">
     <div class="ac-search">
       <form class="ac-search-form" name="sign-up" action="#">
         <div class="ac-search-form-label">

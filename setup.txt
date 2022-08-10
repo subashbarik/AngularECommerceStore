@@ -47,6 +47,7 @@ UI Packages
 * npm install bootstrap@5.2.0 - to install bootstrap version 5.2.0
 * npm install font-awesome - to install font-awesome for icons
 * toastr :  npm install ngx-toastr@14.3.0
+* For loading page animation :npm install ngx-spinner@13.1.1 - https://www.npmjs.com/package/ngx-spinner#usage
 
 Angular Packages used for VS Code
 -----------------------------------
