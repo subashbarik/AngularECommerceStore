@@ -15,6 +15,7 @@ namespace API.Extensions
         {
             // DI services for the app
             services.AddScoped<IProductRepository,ProductRepository>();
+            services.AddScoped<IBasketRepository,BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
 
             // Setup for validation errors to return error 

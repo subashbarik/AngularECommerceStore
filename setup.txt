@@ -14,7 +14,13 @@ In this project we are using VS Code as our editor for development , so we are u
 Nuget Packages for projects
 ---------------------------
 * SqLite - Database support
+* StackExchange.Redis - For in memory database support for product cart.
 
+Docker for Redis
+----------------
+* Install docker desktop from docker.com
+* Docker container confguration is in the file docker-compose.yml
+* Run the container using command 'docker-compose up --detach'
 
 Git and GitHub Setup
 -----------------------

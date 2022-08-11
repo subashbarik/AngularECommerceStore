@@ -4,6 +4,8 @@ using API.Helpers;
 using API.Middleware;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
+
 namespace API
 {
     public class Startup
@@ -26,6 +28,12 @@ namespace API
             services.AddDbContext<StoreContext>(option => 
                                     option.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             
+            // Redis setup
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
             //Calls the custom extension class for Application service configuration
             services.AddApplicationServices();
             //Calls the custom extension class for Swagger service configuration
