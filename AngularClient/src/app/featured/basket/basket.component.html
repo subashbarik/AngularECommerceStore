@@ -1,4 +1,7 @@
-<div class="ac-container ac-basket-grid ac-padding-top-md">
+<div
+  class="ac-container ac-basket-grid ac-padding-top-md"
+  *ngIf="basket$ | async"
+>
   <div *ngIf="(basket$ | async) === null">No Orders found.</div>
   <div *ngIf="basket$ | async as basket">
     <table>
@@ -63,7 +66,7 @@
     </table>
   </div>
 </div>
-<div>
+<div *ngIf="basket$ | async">
   <app-order-totals></app-order-totals>
   <div class="ac-checkout-btn-main-container">
     <div class="ac-checkout-btn-container">
