@@ -15,10 +15,18 @@
       <div class="ac-pd-text">Type : {{ product.productType }}</div>
     </div>
     <div class="ac-pd-item-amount ac-margin-top-md">
-      <i class="fa fa-minus-circle font-size-md ac-pd-plus-minus"></i>
-      <span class="ac-pd-item-qty ac-font-size-sm">2</span>
-      <i class="fa fa-plus-circle ac-font-size-md ac-pd-plus-minus"></i>
-      <button class="ac-btn">Add to Cart</button>
+      <i
+        (click)="decreamentQuantity()"
+        class="fa fa-minus-circle ac-font-size-md ac-pd-plus-minus"
+      ></i>
+      <span class="ac-pd-item-qty ac-font-size-sm">{{ this.quantity }}</span>
+      <i
+        (click)="increamentQuantity()"
+        class="fa fa-plus-circle ac-font-size-md ac-pd-plus-minus"
+      ></i>
+      <button (click)="addItemToBasket()" class="ac-btn-product-details">
+        Add to Cart
+      </button>
     </div>
     <div class="ac-pd-text ac-margin-top-md">{{ product.description }}</div>
   </div>

@@ -1,0 +1,93 @@
+.ac-basket-grid {
+  display: grid;
+  justify-content: center;
+}
+.ac-basket-btn-delete {
+  color: #ff0000;
+}
+.ac-basket-btn-delete:hover {
+  color: #333;
+}
+table {
+  width: 100rem;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 1.6rem 2.4rem;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #edf2ff;
+}
+
+thead th {
+  width: 20%;
+}
+thead tr :first-child {
+  width: 40%;
+}
+thead tr :last-child {
+  width: 10%;
+}
+.ac-product-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.ac-productname:link,
+.ac-productname:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+}
+.ac-productname:hover,
+.ac-productname:active {
+  color: #cf711f;
+}
+.ac-img {
+  max-height: 2.4rem;
+}
+.ac-brand {
+  font-style: italic;
+}
+.ac-checkout-btn-main-container {
+  max-width: 130rem;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  padding-bottom: 3.2rem;
+}
+.ac-checkout-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100rem;
+}
+.ac-checkout-btn-inner-container {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+.ac-lnk-btn-checkout:link,
+.ac-lnk-btn-checkout:visited {
+  display: block;
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  color: #cf711f;
+  background-color: #fff;
+  border: 2px solid #cf711f;
+  transition: all 0.3s;
+  text-align: center;
+  width: 100%;
+}
+.ac-lnk-btn-checkout:hover,
+.ac-lnk-btn-checkout:active {
+  background-color: #cf711f;
+  color: #fff;
+}

@@ -1,0 +1,39 @@
+h1 {
+  font-size: 3.4rem;
+}
+.ac-pd-text {
+  font-size: 1.6rem;
+}
+.ac-price {
+  font-weight: 600;
+}
+
+.ac-pd-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.ac-pd-item-qty {
+  align-self: center;
+}
+
+.ac-pd-img {
+  max-width: 64rem;
+}
+.ac-btn-product-details {
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 2.6rem;
+  border-radius: 5px;
+  color: #cf711f;
+  background-color: #fff;
+  border: 2px solid #cf711f;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ac-btn-product-details:hover {
+  background-color: #cf711f;
+  color: #fff;
+}

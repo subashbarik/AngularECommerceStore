@@ -34,9 +34,11 @@
     </ul>
   </nav>
   <div class="ca-nav-right">
-    <a class="ca-cart">
+    <a routerLink="/basket" class="ca-cart">
       <i class="fa fa-shopping-cart fa-2x ca-cart-icon"></i>
-      <div class="ca-cart-no">5</div>
+      <div *ngIf="basket$ | async as basket" class="ca-cart-no">
+        {{ basket.items.length }}
+      </div>
     </a>
     <a class="ca-nav-right ca-nav-cta" href="#">Login</a>
     <a class="ca-nav-right ca-nav-cta" href="#">Sign up</a>

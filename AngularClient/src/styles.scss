@@ -110,6 +110,9 @@ body {
 .ac-padding-top-md {
   padding-top: 2.4rem !important;
 }
+.ac-margin-top-sm {
+  margin-top: 1.2rem !important;
+}
 .ac-margin-top-md {
   margin-top: 2.4rem !important;
 }
@@ -142,6 +145,16 @@ strong {
 }
 .ac-font-size-md {
   font-size: 2.4rem;
+}
+.ac-pd-item-amount {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  //   margin-top: 3rem;
+}
+.ac-pd-plus-minus {
+  color: #cf711f;
+  cursor: pointer;
 }
 
 // ******************************************************************************
@@ -241,9 +254,21 @@ strong {
   border: 2px solid #adc8d4;
   transition: all 0.3s;
   cursor: pointer;
-  font-family: inherit;
 }
-.ac-btn:hover {
+.ac-btn-small {
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #adc8d4;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ac-btn:hover,
+.ac-btn-small:hover {
   background-color: #cf711f;
   color: #fff;
 }
