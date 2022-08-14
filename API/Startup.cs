@@ -3,6 +3,7 @@ using API.Extensions;
 using API.Helpers;
 using API.Middleware;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 
@@ -26,8 +27,16 @@ namespace API
             
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddDbContext<StoreContext>(option => 
-                                    option.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-            
+            {
+                option.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+            });
+            //Identity DbContext setup
+            services.AddDbContext<AppIdentityDbContext>(option => 
+            {
+                option.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+            });
+                 
+                         
             // Redis setup
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {
@@ -36,6 +45,8 @@ namespace API
             });
             //Calls the custom extension class for Application service configuration
             services.AddApplicationServices();
+            //Calls the custom extension class for Identity servicesd
+            services.AddIdentityServices(_config);
             //Calls the custom extension class for Swagger service configuration
             services.AddSwaggerServices();
             // CORS setting to allow Angular calls from client side
@@ -69,7 +80,7 @@ namespace API
             app.UseStaticFiles();
             // apply CORS policy
             app.UseCors("CorsPolicy");
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

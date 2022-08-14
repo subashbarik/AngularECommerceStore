@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Entities.Identity;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -25,9 +28,11 @@ namespace API
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                 try
                 {
-                    var context = services.GetRequiredService<StoreContext>();
-                    await context.Database.MigrateAsync();
-                    await StoreContextSeed.SeedAsync(context,loggerFactory);
+                    //Store DB Setup
+                    await SetupStoreDb(services,loggerFactory);
+                    //Identity DB Setup
+                    await SetupIdentityDb(services);
+                  
                 }
                 catch(Exception ex)
                 {
@@ -36,6 +41,19 @@ namespace API
                 }
             }
             host.Run();
+        }
+        private static async Task SetupStoreDb(IServiceProvider services, ILoggerFactory loggerFactory)
+        {
+            var context = services.GetRequiredService<StoreContext>();
+            await context.Database.MigrateAsync();
+            await StoreContextSeed.SeedAsync(context,loggerFactory);
+        }
+        private static async Task SetupIdentityDb(IServiceProvider services)
+        {
+            var userManager = services.GetRequiredService<UserManager<AppUser>>();
+            var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+            await identityContext.Database.MigrateAsync();
+            await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
