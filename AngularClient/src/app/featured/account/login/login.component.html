@@ -1,0 +1,55 @@
+<div class="d-flex justify-content-center ac-padding-top-md">
+  <div class="col-4 ac-login-container">
+    <form class="ac-login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h1 class="ac-login-form-header">Login</h1>
+
+      <!-- Normal -->
+      <!-- <div class="ac-login-form-container">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+
+        <label for="Password">Password</label>
+        <input
+          type="password"
+          id="Password"
+          placeholder="Password"
+          formControlName="password"
+        />
+
+        <button class="ac-btn ac-btn-gridrow-fullspace" type="submit">
+          Sign in
+        </button>
+      </div> -->
+      <!-- Using text-input template -->
+      <div class="ac-login-form-container-template">
+        <app-text-input
+          formControlName="email"
+          [label]="'Email address'"
+        ></app-text-input>
+
+        <app-text-input
+          formControlName="password"
+          [label]="'Password'"
+          [type]="'password'"
+        ></app-text-input>
+
+        <button
+          [ngClass]="
+            loginForm.invalid
+              ? 'ac-btn ac-btn-gridrow-fullspace ac-disabled'
+              : 'ac-btn ac-btn-gridrow-fullspace'
+          "
+          [disabled]="loginForm.invalid"
+          type="submit"
+        >
+          Sign in
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

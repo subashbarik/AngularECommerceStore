@@ -1,0 +1,40 @@
+.ac-control-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.2rem;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+.ac-is-invalid {
+  border: solid 1px #ff0000;
+  position: relative;
+}
+.ac-is-valid {
+  border: solid 1px #00ff00;
+}
+.ac-invalid-feedback {
+  color: #ff0000;
+  font-size: 1.2rem;
+}
+.ac-loader {
+  position: absolute;
+  width: auto;
+  top: 10px;
+  right: 10px;
+  margin-top: 0;
+}
+input {
+  height: 3.4rem;
+  border-radius: 5px;
+  border: none;
+}
+input:focus {
+  outline: none;
+  border: solid 1px #cf711f;
+}
+label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+}

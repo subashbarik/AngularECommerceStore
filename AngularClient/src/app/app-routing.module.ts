@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 import { ServerErrorComponent } from './core/components/server-error/server-error.component';
 import { TestErrorComponent } from './core/components/test-error/test-error.component';
+import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './featured/home/home.component';
 
 const routes: Routes = [
@@ -22,12 +23,21 @@ const routes: Routes = [
     loadChildren: () =>
       import('./featured/basket/basket.module').then((mod) => mod.BasketModule),
   },
-  // lazy checkout module
+  // lazy loading checkout module
   {
     path: 'checkout',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./featured/checkout/checkout.module').then(
         (mod) => mod.CheckoutModule
+      ),
+  },
+  // lazy loading account module
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('./featured/account/account.module').then(
+        (mod) => mod.AccountModule
       ),
   },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },

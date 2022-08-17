@@ -1,0 +1,46 @@
+.ac-login-container {
+  //   background-color: #faf1e9;
+  background-color: #edf2ff;
+  padding: 2.6rem 3.2rem 3.2rem 3.2rem;
+  border-radius: 5px;
+}
+.ac-login-form-header {
+  margin-bottom: 1.8rem;
+}
+.ac-login-form-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 1.2rem;
+  justify-content: left;
+  align-items: center;
+}
+.ac-login-form-container-template {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.2rem;
+}
+
+.ac-login-form input {
+  height: 3.4rem;
+  border-radius: 5px;
+  border: none;
+}
+.ac-login-form input:focus {
+  outline: none;
+  border: solid 1px #cf711f;
+}
+.ac-login-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.ac-btn-gridrow-fullspace {
+  grid-row: 3/4;
+  grid-column: 1/-1;
+  margin-top: 1.6rem;
+}
+.ac-disabled {
+  background-color: #d3d3d3;
+  color: #333;
+  cursor: auto;
+}

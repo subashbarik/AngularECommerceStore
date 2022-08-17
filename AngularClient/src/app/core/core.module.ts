@@ -7,6 +7,7 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
 import { TestErrorComponent } from './components/test-error/test-error.component';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
   imports: [
     CommonModule,
     RouterModule,
+    SharedModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
