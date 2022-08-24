@@ -1,0 +1,24 @@
+<ng-container *ngIf="order$ | async as order">
+  <div class="ac-container ac-order-grid ac-padding-top-md">
+    <div>
+      <app-basket-summary
+        [itemList]="order.orderItems"
+        [isBasket]="false"
+        [isOrder]="true"
+      ></app-basket-summary>
+    </div>
+  </div>
+  <div>
+    <div class="ac-container ac-total-grid ac-padding-top-md">
+      <div class="ac-total-contaier">
+        <div class="ac-total-inner-container">
+          <app-order-totals
+            [subtotal]="order.subtotal"
+            [shipping]="order.shippingPrice"
+            [total]="order.total"
+          ></app-order-totals>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

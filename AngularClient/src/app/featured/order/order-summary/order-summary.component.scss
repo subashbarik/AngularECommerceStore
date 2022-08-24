@@ -1,0 +1,26 @@
+.ac-order-grid {
+  display: grid;
+  justify-content: center;
+}
+.ac-total-grid {
+  display: grid;
+  justify-content: center;
+  padding-bottom: 3.2rem;
+  // grid-template-columns: 1fr 1fr;
+}
+
+.ac-total-contaier {
+  display: flex;
+  width: 100rem;
+  justify-content: flex-end;
+}
+.ac-total-inner-container {
+  display: flex;
+  flex-direction: column;
+  // display: grid;
+  // grid-template-columns: 1fr;
+
+  width: 50%;
+
+  // gap: 1.2rem;
+}

@@ -1,0 +1,73 @@
+.ac-basket-btn-delete {
+  color: #ff0000;
+}
+.ac-basket-btn-delete:hover {
+  color: #fff;
+}
+.ac-basket-table-width {
+  width: 100rem;
+}
+table {
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 1.6rem 2.4rem;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #edf2ff;
+}
+
+thead th {
+  width: 20%;
+}
+thead tr :first-child {
+  width: 40%;
+}
+thead tr :last-child {
+  width: 10%;
+}
+.ac-product-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.ac-productname:link,
+.ac-productname:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+}
+.ac-productname:hover,
+.ac-productname:active {
+  color: #cf711f;
+}
+.ac-img {
+  max-height: 2.4rem;
+}
+.ac-brand {
+  font-style: italic;
+}
+.ac-show-basketitem {
+  display: block;
+}
+.ac-remove-basketitem {
+  display: none;
+}
+.ac-pd-item-qty {
+  justify-self: flex-end;
+  display: inline-block;
+}
+.ac-pd-item-amount {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  //   margin-top: 3rem;
+}
+.ac-align-qty {
+  padding-left: 2rem;
+}

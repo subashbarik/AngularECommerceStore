@@ -1,0 +1,33 @@
+.ac-order-table-contaier {
+  display: grid;
+  justify-content: center;
+}
+table {
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  width: 100rem;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 1.6rem 2.4rem;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #edf2ff;
+}
+
+thead th {
+  width: 25%;
+}
+thead tr :nth-child(2) {
+  width: 40%;
+}
+// thead tr :last-child {
+//   width: 10%;
+// }
+tbody tr:hover {
+  background-color: #edf2ff;
+}

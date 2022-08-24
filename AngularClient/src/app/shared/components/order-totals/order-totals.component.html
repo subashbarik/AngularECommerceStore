@@ -1,24 +1,15 @@
-<div class="ac-container ac-total-grid ac-padding-top-md">
-  <div class="ac-total-contaier">
-    <div class="ac-total-inner-container">
-      <div class="ac-ordersummary-header">Order Summary</div>
-      <div
-        class="ac-ordersummary-container"
-        *ngIf="basketTotal$ | async as basketTotal"
-      >
-        <div class="ac-ordersummary-label ac-margin-top-md">Order subtotal</div>
-        <div class="ac-ordersummary-data ac-margin-top-md">
-          {{ basketTotal.subtotal | currency }}
-        </div>
-        <div class="ac-ordersummary-label">Shipping and handling</div>
-        <div class="ac-ordersummary-data">
-          {{ basketTotal.shipping | currency }}
-        </div>
-        <div class="ac-ordersummary-label ac-bold ac-margin-top-sm">Total</div>
-        <div class="ac-ordersummary-data ac-bold ac-margin-top-sm">
-          {{ basketTotal.total | currency }}
-        </div>
-      </div>
-    </div>
+<div class="ac-ordersummary-header">Order Summary</div>
+<div class="ac-ordersummary-container">
+  <div class="ac-ordersummary-label ac-margin-top-md">Order subtotal</div>
+  <div class="ac-ordersummary-data ac-margin-top-md">
+    {{ subtotal | currency }}
+  </div>
+  <div class="ac-ordersummary-label">Shipping and handling</div>
+  <div class="ac-ordersummary-data">
+    {{ shipping | currency }}
+  </div>
+  <div class="ac-ordersummary-label ac-bold ac-margin-top-sm">Total</div>
+  <div class="ac-ordersummary-data ac-bold ac-margin-top-sm">
+    {{ total | currency }}
   </div>
 </div>

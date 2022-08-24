@@ -1,0 +1,68 @@
+<ng-container>
+  <table [class.ac-basket-table-width]="isBasket || isOrder">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th *ngIf="isBasket">Remove</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of itemList">
+        <td>
+          <div class="ac-product-container">
+            <div>
+              <a href="#" routerLink="/shop/{{ item.id || item.productId }}"
+                ><img class="ac-img" src="{{ item.pictureUrl }}"
+              /></a>
+            </div>
+            <div>
+              <div>
+                <a
+                  class="ac-productname"
+                  href="#"
+                  routerLink="/shop/{{ item.id || item.productId }}"
+                  >{{ item.productName }}</a
+                >
+              </div>
+              <div class="ac-brand" *ngIf="item.type">
+                type : {{ item.type }}
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>{{ item.price | currency }}</td>
+        <td>
+          <div class="ac-pd-item-amount">
+            <i
+              *ngIf=""
+              (click)="decrementItemQuantity(item)"
+              class="fa fa-minus-circle ac-font-size-md ac-pd-plus-minus"
+            ></i>
+            <span
+              [class.ac-align-qty]="!isBasket"
+              class="ac-pd-item-qty ac-font-size-sm"
+              >{{ item.quantity }}</span
+            >
+            <i
+              *ngIf="isBasket"
+              (click)="incrementItemQuantity(item)"
+              class="fa fa-plus-circle ac-font-size-md ac-pd-plus-minus"
+            ></i>
+          </div>
+        </td>
+        <td class="ac-bold">{{ item.price * item.quantity | currency }}</td>
+        <td *ngIf="isBasket">
+          <button
+            (click)="removeBasketItem(item)"
+            type="button"
+            class="ac-btn-small ac-basket-btn-delete fa fa-trash"
+          ></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>

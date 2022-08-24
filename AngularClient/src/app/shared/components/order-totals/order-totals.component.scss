@@ -1,31 +1,9 @@
-.ac-total-grid {
-  display: grid;
-  justify-content: center;
-  padding-bottom: 3.2rem;
-  // grid-template-columns: 1fr 1fr;
-}
-
-.ac-total-contaier {
-  display: flex;
-  width: 100rem;
-  justify-content: flex-end;
-}
-.ac-total-inner-container {
-  display: flex;
-  flex-direction: column;
-  // display: grid;
-  // grid-template-columns: 1fr;
-
-  width: 50%;
-
-  // gap: 1.2rem;
-}
 .ac-ordersummary-header {
   font-size: 2rem;
   font-weight: 600;
   background-color: #edf2ff;
   justify-self: flex-start;
-  padding: 1.6rem 0;
+  padding: 1.6rem;
 }
 .ac-ordersummary-container {
   display: grid;
@@ -38,4 +16,7 @@
 }
 .ac-ordersummary-data {
   text-align: right;
+}
+.ac-ordersummary-label {
+  padding-left: 1.6rem;
 }

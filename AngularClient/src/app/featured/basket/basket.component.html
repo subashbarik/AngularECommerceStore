@@ -3,71 +3,27 @@
   *ngIf="basket$ | async"
 >
   <div *ngIf="(basket$ | async) === null">No Orders found.</div>
-  <div *ngIf="basket$ | async as basket">
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>price</th>
-          <th>Quantity</th>
-          <th>Total</th>
-          <th>Remove</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor="let item of basket.items">
-          <td>
-            <div class="ac-product-container">
-              <div>
-                <a href="#" routerLink="/shop/{{ item.id }}"
-                  ><img class="ac-img" src="{{ item.pictureUrl }}"
-                /></a>
-              </div>
-              <div>
-                <div>
-                  <a
-                    class="ac-productname"
-                    href="#"
-                    routerLink="/shop/{{ item.id }}"
-                    >{{ item.productName }}</a
-                  >
-                </div>
-                <div class="ac-brand">type : {{ item.type }}</div>
-              </div>
-            </div>
-          </td>
-          <td>{{ item.price | currency }}</td>
-          <td>
-            <div class="ac-pd-item-amount">
-              <i
-                (click)="decrementItemQuantity(item)"
-                class="fa fa-minus-circle ac-font-size-md ac-pd-plus-minus"
-              ></i>
-              <span class="ac-pd-item-qty ac-font-size-sm">{{
-                item.quantity
-              }}</span>
-              <i
-                (click)="incrementItemQuantity(item)"
-                class="fa fa-plus-circle ac-font-size-md ac-pd-plus-minus"
-              ></i>
-            </div>
-          </td>
-          <td class="ac-bold">{{ item.price * item.quantity | currency }}</td>
-          <td>
-            <button
-              (click)="removeBasketItem(item)"
-              type="button"
-              class="ac-btn-small ac-basket-btn-delete fa fa-trash"
-            ></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div *ngIf="basket$ | async as basketItem">
+    <app-basket-summary
+      [itemList]="basketItem.items"
+      (increament)="incrementItemQuantity($event)"
+      (decreament)="decrementItemQuantity($event)"
+      (remove)="removeBasketItem($event)"
+    ></app-basket-summary>
   </div>
 </div>
 <div *ngIf="basket$ | async">
-  <app-order-totals></app-order-totals>
+  <div class="ac-container ac-total-grid ac-padding-top-md">
+    <div class="ac-total-contaier" *ngIf="basketTotal$ | async as total">
+      <div class="ac-total-inner-container">
+        <app-order-totals
+          [subtotal]="total.subtotal"
+          [shipping]="total.shipping"
+          [total]="total.total"
+        ></app-order-totals>
+      </div>
+    </div>
+  </div>
   <div class="ac-checkout-btn-main-container">
     <div class="ac-checkout-btn-container">
       <div class="ac-checkout-btn-inner-container">

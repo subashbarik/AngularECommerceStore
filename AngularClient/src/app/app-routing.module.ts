@@ -40,6 +40,13 @@ const routes: Routes = [
         (mod) => mod.AccountModule
       ),
   },
+  // lazy loading order module
+  {
+    path: 'orders',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./featured/order/order.module').then((mod) => mod.OrderModule),
+  },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
