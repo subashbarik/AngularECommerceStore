@@ -2,9 +2,12 @@
 using API.Extensions;
 using API.Helpers;
 using API.Middleware;
+using API.Options;
 using Infrastructure.Data;
 using Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using StackExchange.Redis;
 
 namespace API
@@ -26,9 +29,25 @@ namespace API
             services.AddControllers();
             
             services.AddAutoMapper(typeof(MappingProfiles));
-            services.AddDbContext<StoreContext>(option => 
+
+            // Register Database options configuration setup
+            services.ConfigureOptions<DatabaseOptionsSetup>();
+            // Store DbContext setup
+            services.AddDbContext<StoreContext>((serviceProvider, option) => 
             {
-                option.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+                // Resolves Database Options , configuring database options this way is
+                // very easy and we can change the values in the json configuration file
+                // we can just restart the app and it will take effect without the need of
+                // re-deployment
+                var databaseOptions = serviceProvider.GetService<IOptions<DatabaseOptions>>()!.Value;
+                // option.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+                // additional configuration like below that can be set
+                option.UseSqlite(databaseOptions.ConnectionString,sqliteOptionsAction =>{
+                    sqliteOptionsAction.CommandTimeout(databaseOptions.CommandTimeOut);
+                });
+                option.EnableDetailedErrors(databaseOptions.EnableDetailedErrors);
+                option.EnableSensitiveDataLogging(databaseOptions.EnableSensitiveDataLogging);
+
             });
             //Identity DbContext setup
             services.AddDbContext<AppIdentityDbContext>(option => 
