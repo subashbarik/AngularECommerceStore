@@ -8,6 +8,7 @@ import {
   IBasketItem,
   IBasketTotals,
 } from 'src/app/shared/models/basket';
+import { IDeliveryMethod } from 'src/app/shared/models/deliverymethod';
 import { IProduct } from 'src/app/shared/models/product';
 import { environment } from 'src/environments/environment';
 
@@ -20,9 +21,13 @@ export class BasketService {
   private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
   basket$ = this.basketSource.asObservable();
   basketTotal$ = this.basketTotalSource.asObservable();
-
+  shipping = 0;
   constructor(private http: HttpClient) {}
 
+  setShippingPrice(deliveryMethod: IDeliveryMethod) {
+    this.shipping = deliveryMethod.price;
+    this.calculateTotals();
+  }
   getBasket(id: string) {
     return this.http.get(this.baseUrl + 'basket?id=' + id).pipe(
       map((basket: IBasket) => {
@@ -92,7 +97,7 @@ export class BasketService {
   }
   private calculateTotals() {
     const basket = this.getCurrentBasketValue();
-    const shipping = 0;
+    const shipping = this.shipping;
     //  the reduce function take a function and keeps adding the price
     //  for each item in the items array.
     const subtotal = basket.items.reduce((a, b) => b.price * b.quantity + a, 0);

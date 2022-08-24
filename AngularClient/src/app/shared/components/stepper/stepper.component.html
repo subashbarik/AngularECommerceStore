@@ -1,0 +1,15 @@
+<div>
+  <div class="ac-stepper-main-div">
+    <div
+      class="ac-stepper-div"
+      *ngFor="let step of steps; let i = index"
+      [class.ac-selected]="selectedIndex === i"
+      (click)="onClick(i)"
+    >
+      <span>{{ step.label }}:{{ step.completed }}</span>
+    </div>
+  </div>
+  <div>
+    <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+  </div>
+</div>

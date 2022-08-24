@@ -1,0 +1,36 @@
+<div class="ac-deliveryform mt-4" [formGroup]="checkoutForm">
+  <h4 class="ac-deliveryform-header mb-4">Choose your delivery method</h4>
+
+  <div class="ac-df-container" formGroupName="deliveryForm">
+    <div class="mb-3" *ngFor="let method of deliveryMethods">
+      <div class="ac-df-container-inner">
+        <div>
+          <input
+            type="radio"
+            id="{{ method.id }}"
+            value="{{ method.id }}"
+            formControlName="deliveryMethod"
+            style="margin-right: 1rem"
+            (click)="setShippingPrice(method)"
+          />
+        </div>
+        <div for="{{ method.id }}" class="ac-df-label">
+          <div class="ac-df-currency">
+            {{ method.shortName }} - {{ method.price | currency }}
+          </div>
+          <div class="ac-label-description">{{ method.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="float-none d-flex justify-content-between flex-column flex-lg-row mt-2"
+>
+  <button class="ac-btn-small-orange-outline" cdkStepperPrevious>
+    <i class="fa fa-angle-left"></i> Back to Address
+  </button>
+  <button class="ac-btn-small-orange" cdkStepperNext>
+    Go to Review <i class="fa fa-angle-right"></i>
+  </button>
+</div>

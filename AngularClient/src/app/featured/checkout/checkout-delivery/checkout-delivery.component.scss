@@ -1,0 +1,28 @@
+.ac-deliveryform {
+  background-color: #edf2ff;
+  padding: 1.6rem;
+}
+.ac-deliveryform-header {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.ac-df-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.ac-df-container-inner {
+  display: flex;
+  gap: 1.2rem;
+}
+.ac-df-currency {
+  font-weight: 700;
+}
+.ac-df-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ac-label-description {
+  display: block;
+}
