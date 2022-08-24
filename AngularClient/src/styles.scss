@@ -247,35 +247,118 @@ strong {
   color: #aaa;
 }
 //smilar style as nav-cta , ac below stand for angular client
-.ac-btn {
-  font-size: 1.8rem;
+
+// Button area
+.ac-btn,
+.ac-btn-small,
+.ac-btn-small-blue,
+.ac-btn-small-orange,
+.ac-btn-small-blue-outline,
+.ac-btn-small-green-outline,
+.ac-btn-small-orange-outline {
   text-decoration: none;
   font-weight: 500;
-  padding: 0.8rem 2.6rem;
   border-radius: 5px;
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #adc8d4;
-  transition: all 0.3s;
   cursor: pointer;
+  transition: all 0.3s;
 }
+.ac-btn,
 .ac-btn-small {
   font-size: 1.8rem;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1.2rem;
-  border-radius: 5px;
   color: #333;
   background-color: #fff;
   border: 2px solid #adc8d4;
-  transition: all 0.3s;
-  cursor: pointer;
+}
+.ac-btn {
+  padding: 0.8rem 2.6rem;
+}
+.ac-btn-small {
+  padding: 0.5rem 1.2rem;
 }
 .ac-btn:hover,
 .ac-btn-small:hover {
   background-color: #cf711f;
   color: #fff;
 }
+.ac-btn-small-blue,
+.ac-btn-small-orange,
+.ac-btn-small-orange-outline,
+.ac-btn-small-green-outline,
+.ac-btn-small-blue-outline {
+  font-size: 1.6rem;
+  padding: 0.5rem 1.2rem;
+}
+.ac-btn-small-blue {
+  color: #fff;
+  background-color: #0000ff;
+  border: 2px solid #0000ff;
+}
+.ac-btn-small-blue:hover {
+  background-color: #4d4dff;
+}
+.ac-btn-small-blue-outline {
+  color: #0000ff;
+  background-color: #fff;
+  border: 2px solid #0000ff;
+}
+.ac-btn-small-blue-outline:hover {
+  background-color: #0000ff;
+  color: #fff;
+}
+.ac-btn-small-green-outline {
+  color: #009900;
+  background-color: #fff;
+  border: 2px solid #009900;
+}
+.ac-btn-small-green-outline:hover {
+  background-color: #009900;
+  color: #fff;
+}
+.ac-btn-small-orange {
+  color: #fff;
+  background-color: #cf711f;
+  border: 2px solid #cf711f;
+}
+.ac-btn-small-orange:hover {
+  background-color: #d98d4c;
+}
+.ac-btn-small-orange-outline {
+  color: #cf711f;
+  background-color: #fff;
+  border: 2px solid #cf711f;
+}
+.ac-btn-small-orange-outline:hover {
+  background-color: #cf711f;
+  color: #fff;
+}
+
+// green outline disabled
+.ac-btn-small-green-outline.ac-btn-disabled {
+  border: 2px solid #80ff80;
+  color: #80ff80;
+  cursor: auto;
+}
+.ac-btn-small-green-outline.ac-btn-disabled:hover {
+  background-color: #fff;
+  border: 2px solid #80ff80;
+  color: #80ff80;
+  cursor: auto;
+}
+
+// blue out line disabled style
+.ac-btn-small-blue-outline.ac-btn-disabled {
+  border: 2px solid #9999ff;
+  color: #9999ff;
+  cursor: auto;
+}
+.ac-btn-small-blue-outline.ac-btn-disabled:hover {
+  background-color: #fff;
+  border: 2px solid #9999ff;
+  color: #9999ff;
+  cursor: auto;
+}
+// end of button area
+
 .ac-cta *:focus {
   outline: none;
   box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
