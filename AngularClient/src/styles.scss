@@ -28,6 +28,9 @@ body {
 //  this will help to maintain separate style class
 //  and will not same as bootstrap
 /* **************************************** */
+.Stripe {
+  height: 3.4rem;
+}
 .ac-container {
   max-width: 130rem;
   margin: 0 auto;
@@ -355,6 +358,18 @@ strong {
   background-color: #fff;
   border: 2px solid #9999ff;
   color: #9999ff;
+  cursor: auto;
+}
+
+// orange disabled style
+.ac-btn-small-orange.ac-btn-disabled {
+  background-color: #ecc6a5;
+  border: 2px solid #ecc6a5;
+  cursor: auto;
+}
+.ac-btn-small-orange.ac-btn-disabled:hover {
+  background-color: #ecc6a5;
+  border: 2px solid #ecc6a5;
   cursor: auto;
 }
 // end of button area

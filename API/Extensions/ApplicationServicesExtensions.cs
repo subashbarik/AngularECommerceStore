@@ -16,6 +16,7 @@ namespace API.Extensions
         {
             // DI services for the app
             services.AddScoped<IOrderService,OrderService>();
+            services.AddScoped<IPaymentService,PaymentService>();
             services.AddScoped<ITokenService,TokenService>();
             services.AddScoped<IUnitOfWork,UnitOfWork>();
             services.AddScoped<IProductRepository,ProductRepository>();

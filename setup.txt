@@ -19,12 +19,18 @@ Nuget Packages for projects
 * Microsoft.AspNetCore.Identity (Infrastructure Project) - For Login etc.
 * Microsoft.IdentityModel.Tokens (Infrastructure Project) - For tokens
 * System.IdentityModel.Tokens.Jwt (Infrastructure Project) - For tokens serialization and de-serilization etc
+* Stripe.net (Infrastructure Project) - For payment processing using stripe
 Docker for Redis
 ----------------
 * Install docker desktop from docker.com
 * Docker container confguration is in the file docker-compose.yml
 * Run the container using command 'docker-compose up --detach'
 
+Stripe
+---------
+* Install stripe cli to listen to events for local machine testing , If there is a live API 
+exposed (like in production) then it is not needed.
+* Stripe url : stripe.com
 Git and GitHub Setup
 -----------------------
 git init

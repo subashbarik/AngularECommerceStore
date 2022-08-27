@@ -10,7 +10,7 @@
   <button class="ac-btn-small-orange-outline" cdkStepperPrevious>
     <i class="fa fa-angle-left"></i> Back to Delivery
   </button>
-  <button class="ac-btn-small-orange" cdkStepperNext>
+  <button (click)="createPaymentIntent()" class="ac-btn-small-orange">
     Go to Payment <i class="fa fa-angle-right"></i>
   </button>
 </div>

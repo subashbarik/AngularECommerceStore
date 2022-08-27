@@ -20,14 +20,14 @@ thead tr {
 }
 
 thead th {
-  width: 25%;
+  width: 20%;
 }
 thead tr :nth-child(2) {
   width: 40%;
 }
-// thead tr :last-child {
-//   width: 10%;
-// }
+thead tr :last-child {
+  width: 25%;
+}
 tbody tr:hover {
   background-color: #edf2ff;
 }
