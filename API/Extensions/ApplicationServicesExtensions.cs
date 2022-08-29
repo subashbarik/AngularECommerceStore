@@ -15,6 +15,10 @@ namespace API.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             // DI services for the app
+
+            //Caching needs to be enabled across user hence singleton
+            services.AddSingleton<IResponseCacheService,ResponseCacheService>();
+
             services.AddScoped<IOrderService,OrderService>();
             services.AddScoped<IPaymentService,PaymentService>();
             services.AddScoped<ITokenService,TokenService>();
