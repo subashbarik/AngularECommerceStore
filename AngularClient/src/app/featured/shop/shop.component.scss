@@ -1,0 +1,89 @@
+.ac-main-grid {
+  grid-template-columns: 1fr 4fr;
+  // background-color: #cf711f;
+}
+// Left side filter area styles
+.ac-main-filter {
+  display: flex;
+  flex-direction: column;
+  // border: 2px solid #edf2ff;
+  background-color: #edf2ff;
+  // background-color: #faf1e9;
+}
+.ac-filter-label {
+  margin: 1.8rem 0;
+  font-size: 1.8rem;
+  color: #cf711f;
+  font-weight: 600;
+}
+.ac-filter-label.ac-first {
+  margin-top: 0.4rem;
+}
+
+.ac-filter-label-item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  color: #333;
+  font-size: 1.6rem;
+  padding-left: 0rem;
+}
+.ac-filter-label-item li {
+  height: 2.4rem;
+  padding-top: 0.4rem;
+}
+.ac-filter-label-item li:hover {
+  background-color: #c6d9e1;
+  border-radius: 5px 5px 0 0;
+}
+.ac-filter-active {
+  background-color: #adc8d4;
+  border-radius: 5px 5px 0 0;
+}
+.ac-main-filter select {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+// Right side area containing search and product list
+.ac-main-product {
+  display: grid;
+}
+// Search form style
+.ac-search-form {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-bottom: 2.4rem;
+}
+
+.ac-search-form-label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  align-self: center;
+  justify-self: flex-start;
+}
+.ac-search-form-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.ac-search-form input {
+  width: 40%;
+  padding: 0.8rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: #333;
+  border: 2px solid #adc8d4;
+  // background-color: #edf2ff;
+  border-radius: 5px;
+  //   box-shadow: 0 1px 2px rgba(173, 200, 212, 1);
+}
+.ac-search-form input:focus {
+  outline-color: #adc8d4;
+}
+
+.ac-search-form input::placeholder {
+  color: #aaa;
+}
