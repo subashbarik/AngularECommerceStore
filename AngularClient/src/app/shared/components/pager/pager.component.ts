@@ -16,6 +16,8 @@ import {
 export class PagerComponent implements OnInit, OnChanges {
   @Input() totalCount: number;
   @Input() pageSize: number;
+  @Input() pageIndex: number;
+
   @Output() pageChanged = new EventEmitter<number>();
 
   pageNumber = 1; //currently clicked page number
@@ -30,12 +32,21 @@ export class PagerComponent implements OnInit, OnChanges {
     // because ngOnChange will be called whenever there
     // is a change in parent, which is what happens when
     // we fetch products
-    this.pageNumber = 1; //Start with the first page
+    if (this.pageIndex) {
+      this.pageNumber = this.pageIndex;
+    } else {
+      this.pageNumber = 1; //Start with the first page
+    }
+
     this.setPageCountArray();
     this.setEnableDisablePrimaryPageButtons();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.pageIndex) {
+      this.pageNumber = this.pageIndex;
+    }
+  }
   onPageClicked(page: number) {
     this.pageNumber = page;
     this.pageChanged.emit(page);
