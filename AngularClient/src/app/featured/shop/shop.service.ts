@@ -76,19 +76,10 @@ export class ShopService {
 
   getProduct(id: number) {
     let product: IProduct;
-
-    let data = this.productCache.values();
-
-    for (let products of data) {
+    for (let products of this.productCache.values()) {
       product = products.find((p: IProduct) => p.id === id);
-
       if (product) break;
     }
-
-    // this.productCache.forEach((products: IProduct[]) => {
-    //   console.log(product);
-    //   product = products.find((p) => p.id === id);
-    // });
 
     if (product) {
       return of(product);
