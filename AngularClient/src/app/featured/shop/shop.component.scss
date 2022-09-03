@@ -1,14 +1,16 @@
 .ac-main-grid {
   grid-template-columns: 1fr 4fr;
   // background-color: #cf711f;
+  background-color: #edf2ff;
 }
 // Left side filter area styles
 .ac-main-filter {
   display: flex;
   flex-direction: column;
   // border: 2px solid #edf2ff;
-  background-color: #edf2ff;
+  // background-color: #edf2ff;
   // background-color: #faf1e9;
+  // background-color: #d5dae6;
 }
 .ac-filter-label {
   margin: 1.8rem 0;
@@ -44,6 +46,7 @@
 .ac-main-filter select {
   font-size: 1.6rem;
   color: #333;
+  // background-color: #cf711f;
 }
 
 // Right side area containing search and product list
@@ -55,6 +58,7 @@
   display: grid;
   grid-template-columns: 2fr 4fr;
   margin-bottom: 2.4rem;
+  background-color: #edf2ff;
 }
 
 .ac-search-form-label {
@@ -86,4 +90,23 @@
 
 .ac-search-form input::placeholder {
   color: #aaa;
+}
+
+.ac-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  // background-color: #edf2ff;
+}
+
+// Product Card style
+.ac-card {
+  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.ac-card:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 1.4rem 1.4rem rgba(0, 0, 0, 0.2);
 }

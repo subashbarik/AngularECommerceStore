@@ -108,7 +108,7 @@ export class CheckoutPaymentComponent
       if (paymentResult.paymentIntent) {
         this.basketService.deleteBasket(basket);
         const navigationExtras: NavigationExtras = { state: createdOrder };
-        this.router.navigate(['checkout/success'], navigationExtras);
+        this.router.navigate(['basket/checkout/success'], navigationExtras);
       } else {
         this.toastrService.error(paymentResult.error.message);
       }

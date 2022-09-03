@@ -1,8 +1,7 @@
-<div
-  class="ac-container ac-basket-grid ac-padding-top-md"
-  *ngIf="basket$ | async"
->
-  <div *ngIf="(basket$ | async) === null">No Orders found.</div>
+<div class="ac-container ac-basket-grid ac-padding-top-md">
+  <div *ngIf="(basket$ | async) === null" class="ac-noorders-found">
+    No Orders found.
+  </div>
   <div *ngIf="basket$ | async as basketItem">
     <app-basket-summary
       [itemList]="basketItem.items"
@@ -24,10 +23,10 @@
       </div>
     </div>
   </div>
-  <div class="ac-checkout-btn-main-container">
+  <div class="ac-container ac-checkout-btn-main-container">
     <div class="ac-checkout-btn-container">
       <div class="ac-checkout-btn-inner-container">
-        <a href="" routerLink="/checkout" class="ac-lnk-btn-checkout"
+        <a href="" routerLink="/basket/checkout" class="ac-lnk-btn-checkout"
           >Proceed to checkout</a
         >
       </div>

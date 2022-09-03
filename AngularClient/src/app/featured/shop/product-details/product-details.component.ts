@@ -19,20 +19,21 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getProduct();
+    // this.getProduct();
+    this.route.data.subscribe((data) => (this.product = data.product));
   }
-  getProduct() {
-    this.shopService
-      .getProduct(+this.route.snapshot.paramMap.get('id'))
-      .subscribe(
-        (response) => {
-          this.product = response;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  }
+  // getProduct() {
+  //   this.shopService
+  //     .getProduct(+this.route.snapshot.paramMap.get('id'))
+  //     .subscribe(
+  //       (response) => {
+  //         this.product = response;
+  //       },
+  //       (error) => {
+  //         console.log(error);
+  //       }
+  //     );
+  // }
   addItemToBasket() {
     this.basketService.addItemToBasket(this.product, this.quantity);
   }

@@ -9,11 +9,23 @@ import { OrderService } from './order.service';
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
-  orders$: Observable<IOrder[]>;
+  myOrders: IOrder[];
+  bFetchingOrder = true;
   constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
-    this.orders$ = this.orderService.orders$;
-    this.orderService.getOrders();
+    this.getOrders();
+  }
+  getOrders() {
+    this.orderService.getOrders().subscribe(
+      (orders: IOrder[]) => {
+        this.myOrders = orders;
+        this.bFetchingOrder = false;
+      },
+      (error) => {
+        console.log(error);
+        this.bFetchingOrder = false;
+      }
+    );
   }
 }

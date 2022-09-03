@@ -18,7 +18,10 @@ export class OrderSummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.order$ = this.orderService.order$;
-    this.getOrderDetails();
+    this.route.data.subscribe((data) => {
+      this.orderService.broadcastOrderDetail(data.order);
+    });
+    // this.getOrderDetails();
   }
 
   getOrderDetails() {

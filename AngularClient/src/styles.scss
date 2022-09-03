@@ -34,6 +34,7 @@ body {
 .ac-container {
   max-width: 130rem;
   margin: 0 auto;
+  background-color: #edf2ff;
 }
 .ac-grid {
   display: grid;
@@ -111,7 +112,10 @@ body {
 // }
 /* HELPER classes */
 .ac-padding-top-md {
-  padding-top: 2.4rem !important;
+  padding-top: 1rem !important;
+}
+.ac-padding-bottom-md {
+  padding-bottom: 2.4rem !important;
 }
 .ac-margin-top-sm {
   margin-top: 1.2rem !important;
@@ -293,24 +297,6 @@ strong {
 .ac-cta *:focus {
   outline: none;
   box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
-}
-.ac-products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.6rem;
-  // background-color: #adc8d4;
-}
-
-// Product Card style
-.ac-card {
-  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.1);
-  border-radius: 11px;
-  overflow: hidden;
-  transition: all 0.4s;
-}
-.ac-card:hover {
-  transform: translateY(-1.2rem);
-  box-shadow: 0 1.4rem 1.4rem rgba(0, 0, 0, 0.2);
 }
 
 .ac-lnk-btn-small:link,

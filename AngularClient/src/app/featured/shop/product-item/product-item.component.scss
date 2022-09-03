@@ -12,6 +12,19 @@
   // padding: 0 1.6rem 1.6rem 1.6rem;
   // padding: 0rem 1.6rem 0 0;
 }
+.ac-card-content:hover {
+  background: linear-gradient(
+    to right bottom,
+    rgba(235, 151, 78, 0.35),
+    rgba(230, 125, 34, 0.35)
+  );
+
+  .ac-card-img {
+    background-color: #e67e22;
+  }
+  //opacity: 0.7;
+}
+
 .ac-card-content-data {
   height: 7.2rem;
   margin-bottom: 2.4rem;
@@ -20,12 +33,13 @@
 .ac-card-img {
   width: 100%;
   background-color: #adc8d4;
-  // background-color: #edf2ff;
+  // background-color: #bac8ff;
 }
 .ac-card-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #333;
-  font-weight: 600;
+  font-weight: 500;
+  margin-top: 1.2rem;
   margin-bottom: 1.2rem;
 }
 .ac-card-link:link,
@@ -46,6 +60,8 @@
   font-size: 1.5rem;
   display: flex;
   gap: 1.2rem;
+  color: #e67e22;
+  font-weight: 600;
 }
 .ac-card-text {
   font-size: 1.2rem;
