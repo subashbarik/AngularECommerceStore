@@ -1,8 +1,15 @@
 .ac-section-grid {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  background-color: #edf2ff;
   align-items: center;
-  //   margin-top: 2.4rem;
-  padding: 1.8rem 0;
+  margin-top: 6.2rem;
+  padding: 1.4rem 1.4rem;
+  // background: linear-gradient(to right bottom, #f0b27a, #b8651b);
+  background-color: #f0b27a;
+}
+ol li:last-child {
+  color: #333;
+}
+.ac-lastlink {
+  text-decoration: none;
 }
