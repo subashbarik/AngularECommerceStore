@@ -10,31 +10,20 @@ import { environment } from 'src/environments/environment';
 })
 export class OrderService {
   baseUrl = environment.apiUrl;
-  private ordersSource = new BehaviorSubject<IOrder[]>(null);
   private orderSource = new BehaviorSubject<IOrder>(null);
-  orders$ = this.ordersSource.asObservable();
   order$ = this.orderSource.asObservable();
 
   constructor(private http: HttpClient) {}
 
   getOrders() {
-    return this.http.get(this.baseUrl + 'orders').subscribe(
-      (response: IOrder[]) => {
-        this.ordersSource.next(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    return this.http.get(this.baseUrl + 'orders');
   }
   getOrderDetails(id: number) {
-    return this.http.get(this.baseUrl + 'orders/' + id).subscribe(
-      (response: IOrder) => {
-        this.orderSource.next(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    return this.http.get<IOrder>(this.baseUrl + 'orders/' + id);
+  }
+  broadcastOrderDetail(order: IOrder) {
+    if (order) {
+      this.orderSource.next(order);
+    }
   }
 }

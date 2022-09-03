@@ -1,6 +1,5 @@
 <div class="ac-container ac-order-table-contaier ac-padding-top-md">
-  <!-- <div *ngIf="(orders$ | async) === null">No Orders found.</div> -->
-  <div *ngIf="orders$ | async as orders">
+  <div *ngIf="!bFetchingOrder">
     <table [class.ac-basket-table-width]="isBasket">
       <thead>
         <tr>
@@ -12,7 +11,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let order of orders" routerLink="/orders/{{ order.id }}">
+        <tr *ngFor="let order of myOrders" routerLink="/orders/{{ order.id }}">
           <td># {{ order.id }}</td>
           <td>{{ order.orderDate | date: "medium" }}</td>
           <td>{{ order.total | currency }}</td>
